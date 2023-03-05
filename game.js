@@ -9,16 +9,16 @@ let highestPlayer; //Highest stat player
 var delayInMilliseconds = 10000; // 1 Second
 
 let castMembers = [
-{name:"Sidney Prescott", image: "Sidney Prescott.jpeg"},
-{name:"Gale Weathers", image: "Gale Weathers.jpg"},
-{name:"Stu Macher", image: "Stu Macher.jpg"},
-{name:"Billy Loomis", image: "Billy Loomis.webp"},
-{name:"Dewey Riley", image: "Dewey Riley .jpeg"},
-{name:"Tatum Riley", image: "Tatum Riley.jpg"},
-{name:"Principal Himbry", image: "Principal Himbry.webp"},
-{name:"Tatum Riley", image: "Tatum Riley.jpg"},
-{name:"Casey Becker", image: "Casey Becker.webp"},
-{name:"Randy Meeks", image: "Randy Meeks.webp"}
+{name:"Sidney Prescott", image: "sidney prescott.jpeg"},
+{name:"Gale Weathers", image: "gale weathers.jpg"},
+{name:"Stu Macher", image: "stu macher.jpg"},
+{name:"Billy Loomis", image: "billy loomis.webp"},
+{name:"Dewey Riley", image: "dewey riley .jpeg"},
+{name:"Tatum Riley", image: "tatum riley.jpg"},
+{name:"Principal Himbry", image: "principal himbry.webp"},
+{name:"Tatum Riley", image: "tatum riley.jpg"},
+{name:"Casey Becker", image: "casey becker.webp"},
+{name:"Randy Meeks", image: "randy meeks.webp"}
 ];
 
 let scenes = [
