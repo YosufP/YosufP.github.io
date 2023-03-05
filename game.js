@@ -1,4 +1,4 @@
-let players = 7; // Player count
+let players = 10; // Player count
 let episodecount = 0; // Episode Value count
 let killer; // Initializes killer variable
 let stamina; // Stamina stat for each player 
@@ -9,22 +9,23 @@ let highestPlayer; //Highest stat player
 var delayInMilliseconds = 10000; // 1 Second
 
 let castMembers = [
-{name:"Sidney Prescott", image: "sidney prescott.jpeg"},
-{name:"Gale Weathers", image: "gale weathers.jpg"},
-{name:"Stu Macher", image: "stu macher.jpg"},
-{name:"Billy Loomis", image: "billy loomis.webp"},
-{name:"Dewey Riley", image: "dewey riley .jpeg"},
-{name:"Tatum Riley", image: "tatum riley.jpg"},
-{name:"Principal Himbry", image: "principal himbry.webp"},
-{name:"Tatum Riley", image: "tatum riley.jpg"},
-{name:"Casey Becker", image: "casey becker.webp"},
-{name:"Randy Meeks", image: "randy meeks.webp"}
+{name:"Sidney Prescott", image: "sidney prescott.jpeg", id: 1},
+{name:"Gale Weathers", image: "gale weathers.jpg", id: 2},
+{name:"Stu Macher", image: "stu macher.jpg", id: 3},
+{name:"Billy Loomis", image: "billy loomis.webp", id: 4},
+{name:"Dewey Riley", image: "dewey riley .jpeg", id: 5},
+{name:"Tatum Riley", image: "tatum riley.jpg", id: 6},
+{name:"Principal Himbry", image: "principal himbry.webp", id: 7},
+{name:"Tatum Riley", image: "tatum riley.jpg", id: 8},
+{name:"Casey Becker", image: "casey becker.webp", id: 9},
+{name:"Randy Meeks", image: "randy meeks.webp", id: 10}
 ];
 
 let scenes = [
 {name:"Stu's Garage", image: "garagescene.png", num: 2},
 {name:"Act 3", image: "sidneygun.jpg"},
 {name:"Casey's Home", image: "sidneygun.jpg", num:3},
+{name:"High School Benches", image: "group.jpeg", num:4},
 ];
 
 let gameStarted = false;
@@ -127,17 +128,17 @@ for (let i = 0; i < castMembers; i++) { // Loop through each player
 }
 
 	let lowestPlayerCastMember = castMembers[lowestPlayer];
-
-	console.log("how many survivors is there in the game (OS)" + castMembers);
+	assignStats();
+	chooseKiller();
+	assignObjects();
+    triggerEvent(); 
+	
+	console.log("how many survivors is there in the game (OS)" + castMembers.name);
 	
 	document.getElementById("maintext").innerHTML = "Opening Scene";
 	document.getElementById("scenebox").style.backgroundImage = "url(./images/s1oc.webp)";	
 	document.getElementById("desc").innerHTML = "The Phone Rings... and " + lowestPlayerCastMember.name + " answers the phone";
-	
-	chooseKiller();
-	assignStats();
-	assignObjects();
-    triggerEvent(); 
+
 	eliminateOne();
     increaseSuspicion();	
 	
@@ -185,7 +186,7 @@ function playEpisode() {
 		episodecount++; // Increment episode count
 		console.log("Episode after Opening Scene Count " + episodecount);		
 	} 
-	else if (scenenum === 2 & lowestPlayerCastMember.name === "Tatum Riley") {
+	else if (scenenum === 2 && lowestPlayerCastMember === "Tatum Riley") {
 		document.getElementById("maintext").innerHTML = scenename;
 		document.getElementById("scenebox").src = "./images/"+ scene;
 		document.getElementById("desc").innerHTML = "The garage door slams and " + lowestPlayerCastMember.name + " turns around and sees Ghostface... in sheer panic " + lowestPlayerCastMember.name + "throws beer bottles at Ghostface and attemps to go through the flap cat door";
@@ -203,11 +204,11 @@ function playEpisode() {
 		episodecount++; // Increment episode count
 		console.log("Episode after Opening Scene Count " + episodecount);		
 	} 
-	else if (scenenum === 3 & lowestPlayerCastMember.name === "Casey Becker") {
+	else if (scenenum === 3 && lowestPlayerCastMember.name === "Casey Becker") {
 		document.getElementById("maintext").innerHTML = scenename;
-		document.getElementById("scenebox").src = "./images/caseystab.webp";
+		document.getElementById("scenebox").src = "./images/caseycall.jpeg";
+		document.getElementById("scenebox2").src = "./images/caseystab.webp";
 		document.getElementById("desc").innerHTML = "The phone rings and  " + lowestPlayerCastMember.name + " answers the phone. " + lowestPlayerCastMember.name + " is shocked and scared when Ghostface threatens to gut her";
-		main.appendChild(video);
 		assignObjects();
 		triggerEvent(); 
 		eliminateOne();
@@ -215,13 +216,24 @@ function playEpisode() {
 		episodecount++; // Increment episode count
 		console.log("Episode after Opening Scene Count " + episodecount);		
 	} 
-	else if (episodecount === 4 & lowestPlayerCastMember.name === "Sidney Prescott") {
+	
+	else if (scenenum === 2 && castMembers.id === 3 && castMembers.id === 6 && castMembers.id === 1 && castMembers.id === 4) {
+		document.getElementById("maintext").innerHTML = scenename;
+		document.getElementById("scenebox").src = "./images/group.jpeg";
+		document.getElementById("desc").innerHTML = "The group discuss the recent murders and who could be behind them";
+		assignObjects();
+		triggerEvent(); 
+		increaseSuspicion();	
+		episodecount++; // Increment episode count
+		console.log("Episode after Opening Scene Count " + episodecount);		
+	} 
+	else if (episodecount === 3 & castMembers.id === 1 & 6) {
 		document.getElementById("maintext").innerHTML = "filler";
 		document.getElementById("scenebox").src = "./images/sidneytatum.jpg";
+		document.getElementById("scenebox2").src = "./images/sidneytatum2.jpg";
 		document.getElementById("desc").innerHTML = "The phone rings and  " + lowestPlayerCastMember.name + " answers the phone. " + lowestPlayerCastMember.name + " is shocked whilst Tatum is listening";
 		assignObjects();
 		triggerEvent(); 
-		eliminateOne();
 		increaseSuspicion();	
 		episodecount++; // Increment episode count
 		console.log("Episode after Opening Scene Count " + episodecount);		

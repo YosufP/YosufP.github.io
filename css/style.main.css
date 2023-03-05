@@ -56,6 +56,30 @@
   background-blend-mode: normal;
 }
 
+#scenebox2 {
+  position: absolute;
+  left: 61px;
+  top: 401.5px;
+  width: 364px;
+  height: 155px;
+  border-radius: 25px;
+  border: 3px solid #ffffff;
+  background: #c4c4c4;
+  background-blend-mode: normal;
+}
+
+#scenebox3 {
+  position: absolute;
+  left: 61px;
+  top: 51.5px;
+  width: 364px;
+  height: 335px;
+  border-radius: 25px;
+  border: 3px solid #ffffff;
+  background: #c4c4c4;
+  background-blend-mode: normal;
+}
+
 #objectbox {
   position: absolute;
   left: 867px;
