@@ -48,8 +48,8 @@
   position: absolute;
   left: 61px;
   top: 51.5px;
-  width: 364px;
-  height: 335px;
+  width: 300px;
+  height: 300px;
   border-radius: 25px;
   border: 3px solid #ffffff;
   background: #c4c4c4;
@@ -59,9 +59,9 @@
 #scenebox2 {
   position: absolute;
   left: 61px;
-  top: 401.5px;
-  width: 364px;
-  height: 155px;
+  top: 375px;
+  width: 300px;
+  height: 150px;
   border-radius: 25px;
   border: 3px solid #ffffff;
   background: #c4c4c4;
@@ -70,10 +70,10 @@
 
 #scenebox3 {
   position: absolute;
-  left: 61px;
-  top: 51.5px;
-  width: 364px;
-  height: 335px;
+  left: 867px;
+  top: 375px;
+  width: 200px;
+  height: 200px;
   border-radius: 25px;
   border: 3px solid #ffffff;
   background: #c4c4c4;
@@ -364,6 +364,18 @@
   position: absolute;
   left: 875px;
   top: 760px;
+  width: 250px;
+  height: 68px;
+  color: #ffffff;
+  font-family: Kadwa;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+#statustext {
+  position: absolute;
+  left: 875px;
+  top: 570px;
   width: 250px;
   height: 68px;
   color: #ffffff;
